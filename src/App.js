@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { getHeight } from "./getHeight";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [heights, setHeights] = useState([]);
+
+  useEffect(() => {
+    console.log(heights);
+  }, [heights]);
+
+  useEffect(() => {
+    const intervalID = setInterval(async () => {
+      const temp = await getHeight();
+      const tempArray = [...heights];
+      tempArray.push(temp);
+      setHeights(tempArray);
+    }, 5000);
+    return () => clearInterval(intervalID);
+  });
+  return <div className='App'>Hello World</div>;
 }
 
 export default App;
