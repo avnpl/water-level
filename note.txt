@@ -1,0 +1,27 @@
+Nodemcu is  connected to the PC and gets power through the usb cable. Same goes for the Arduino Uno
+
+The trigger and echo pins of the ultrasonic hc-sr04  sensor are conneted to the nodemcu since nodemcu is
+the one responsible for calculating the distance.(copy ultrasonic sensor ka working from internet
+and the site)  It further acts a web server on the local wifi network when it's supplied power.
+It returns the distance at the current moment when it receives a request. The purpose of the Arduino is
+just to supply the 5v supply required by the sensor. nodemcu only functions at 3v and the sensor needs 5v.
+So an alternate power supply of 5v was required to be connected to the sensor
+
+We run a React app made using JS on the local network. The app polls or sends request to the nodemcu server
+every 5 seconds for the distance. The app then stores all the distances, calculates the amount of water level
+in terms of percentage. Using the stored distances between the sensor and the water level, it calculates the
+amount of water used in real time and displays it along with the cost of the used water
+
+The project can be easily modified to fit any kind of tanks by changing the constants in the app such as the max
+height of the tank, the cross-sectional area of the tank, the local wifi network, the cost of water per litre
+
+Future scope includes making the system available for the whole internet instead of the local network and using
+it for more liquids than just work and thus be used in other industries
+
+References:
+https://iotdesignpro.com/projects/iot-based-water-level-indicator-using-ultrasonic-sensor
+https://www.electronicshub.org/esp8266-web-server/
+https://www.instructables.com/Distance-Measurement-Using-HC-SR04-Via-NodeMCU/
+https://create.arduino.cc/projecthub/abdularbi17/ultrasonic-sensor-hc-sr04-with-arduino-tutorial-327ff6
+https://www.youtube.com/watch?v=CnKPiynzAbs
+https://www.youtube.com/watch?v=li1mtgCEDwQ
