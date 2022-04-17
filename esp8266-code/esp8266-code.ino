@@ -44,6 +44,10 @@ void setup(void){
   delayMicroseconds(10); 
   digitalWrite(TRIGGER, LOW);
   long duration = pulseIn(ECHO, HIGH);
-  data = (duration/2) / 29.09;
+  int temp = (duration / 2) / 29.09;
+  if (temp > 0)
+  {
+    data = temp;
+  }
   server.handleClient();
 }

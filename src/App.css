@@ -1,0 +1,132 @@
+.App {
+  background-color: var(--gray1);
+  color: var(--gray12);
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.wrapper {
+  background-color: var(--gray3);
+  height: 250px;
+  width: 150px;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--gray6);
+  transition: all 0.2s ease;
+}
+
+.dashboard {
+  padding: 1rem;
+  text-align: left;
+}
+
+.dashboard h1 {
+  font-variant-numeric: tabular-nums;
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+
+.update {
+  color: var(--gray10);
+  margin-top: 1rem;
+}
+
+.rule {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  margin-top: 1rem;
+  background-color: var(--gray3);
+}
+
+.history {
+  margin: 1rem 0;
+}
+
+table {
+  width: 400px;
+  margin: 2rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table thead th td {
+  height: 2.5rem;
+}
+
+table tbody tr td {
+  height: 3.125rem;
+}
+
+table th,
+table td {
+  padding: 0 0.625rem;
+  text-align: left;
+}
+
+table th {
+  height: 2.5rem;
+  color: var(--gray11);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--gray5);
+  border-top: 1px solid var(--gray5);
+  background-color: var(--gray3);
+}
+
+table th:nth-child(1) {
+  border-bottom: 1px solid var(--gray5);
+  border-left: 1px solid var(--gray5);
+  border-top: 1px solid var(--gray5);
+}
+
+table th:last-child {
+  border-bottom: 1px solid var(--gray5);
+  border-right: 1px solid var(--gray5);
+  border-top: 1px solid var(--gray5);
+}
+
+table tr td {
+  font-size: 0.875rem;
+  height: 2.5rem;
+}
+
+table td:nth-child(1) {
+  border-left: 1px solid transparent;
+}
+tr {
+  color: var(--gray11);
+  background-color: var(--gray2);
+}
+
+table tr:not(:last-of-type) td {
+  border-bottom: 1px solid var(--gray5);
+}
